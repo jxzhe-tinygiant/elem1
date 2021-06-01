@@ -22,12 +22,12 @@
             -ms-filter: blur(2rem);
             z-index: -1;
         }
-
+        
         .container {
             max-width: 20rem !important;
             background: #181818;
         }
-
+        
         #header {
             background: url(專輯cover.jpg);
             background-repeat: no-repeat;
@@ -35,11 +35,11 @@
             background-position: center;
             height: 20rem;
         }
-
+        
         h1 {
             font-size: 1.1rem !important;
         }
-
+        
         #arrow {
             width: 0;
             height: 0;
@@ -50,7 +50,7 @@
             bottom: -1.2rem;
             left: 9.4rem;
         }
-
+        
         .service {
             background-color: white;
             width: 100%;
@@ -60,36 +60,39 @@
             border-top: 1px solid #00000010;
             transition: background-color .03s;
         }
-
+        
         .service:hover {
             background-color: #f5f5f5;
         }
-
+        
         .service .btn {
             transition: color .03s, background-color .03s, border-color .03s;
         }
-
+        
         .service:hover .btn {
             color: #fff;
             background-color: #343a40;
             border-color: #343a40;
         }
-
+        
         .service a {
             overflow: hidden;
         }
-
+        
+        .service a img {
+            width: 125px;
+        }
+        
         #footer {
             background: transparent;
         }
-
+        
         #footer a {
             font-size: .8rem;
             text-shadow: 0 0 1rem #0000007f;
         }
     </style>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>V.K Elementary Piano Collection Vol. 1</title>
 </head>
 
@@ -102,91 +105,97 @@
             <div class="font-weight-light mt-1">Choose music service</div>
             <div id="arrow"></div>
         </div>
-        <div>
-            <div class="service"> <a
-                    class="d-flex justify-content-between align-items-center h-100 text-decoration-none" target="_blank"
-                    href="https://reurl.cc/Z7jqV6" class="btn btn-lg"> <img class="ml-3" width="125px" height="37.52px"
-                        src="https://www.vk-style.com/archive/image/article1/images/supernova/spotify.png"
-                        alt="spotify">
+        <div id="services">
+            <div v-for="service in services" v-if="service.href" class="service">
+                <a class="d-flex justify-content-between align-items-center h-100 text-decoration-none" target="_blank" :href="service.href" class="btn btn-lg">
+                    <img class="ml-3" :src="service.src" :alt="service.alt">
                     <div class="btn btn-outline-dark mr-3">Play</div>
-                </a> </div>
-            <div class="service"> <a
-                    class="d-flex justify-content-between align-items-center h-100 text-decoration-none" target="_blank"
-                    href="https://music.apple.com/us/album/endless-falling-lights-supernova/1528586696"
-                    class="btn btn-lg"> <img class="ml-3" width="120px" height="31.25px"
-                        src="https://www.vk-style.com/archive/image/article1/images/supernova/applemusic.png"
-                        alt="applemusic">
-                    <div class="btn btn-outline-dark mr-3">Play</div>
-                </a> </div>
-            <div class="service"> <a
-                    class="d-flex justify-content-between align-items-center h-100 text-decoration-none" target="_blank"
-                    href="https://kkbox.fm/oa5DtH"> <img class="ml-3" width="125px" height="34.06px"
-                        src="https://www.vk-style.com/archive/image/article1/images/supernova/kkbox.png"
-                        alt="kkbox""> <div class=" btn btn-outline-dark mr-3">Play</div></a>
+                </a>
+            </div>
         </div>
-        <div class="service"> <a class="d-flex justify-content-between align-items-center h-100 text-decoration-none"
-                target="_blank" href="https://music.amazon.com/albums/B08GQF2MFP"> <img class="ml-3" width="125px"
-                    height="40px" src="https://www.vk-style.com/archive/image/article1/images/supernova/amazonmusic.png"
-                    alt="amazonmusic">
-                <div class="btn btn-outline-dark mr-3">Play</div>
-            </a> </div>
-        <div class="service"> <a class="d-flex justify-content-between align-items-center h-100 text-decoration-none"
-                target="_blank" href="https://mf.awa.fm/2QPD4nZ" class="btn btn-lg"> <img class="ml-3" width="125px"
-                    height="62.5px" src="https://www.vk-style.com/archive/image/article1/images/supernova/awa.png"
-                    alt="awa">
-                <div class="btn btn-outline-dark mr-3">Play</div>
-            </a> </div>
-        <div class="service"> <a class="d-flex justify-content-between align-items-center h-100 text-decoration-none"
-                target="_blank" href="https://listen.tidal.com/album/153306677" class="btn btn-lg"> <img class="ml-3"
-                    width="120px" height="16.54px"
-                    src="https://www.vk-style.com/archive/image/article1/images/supernova/tidal.png" alt="tidal">
-                <div class="btn btn-outline-dark mr-3">Play</div>
-            </a> </div>
-        <div class="service"> <a class="d-flex justify-content-between align-items-center h-100 text-decoration-none"
-                target="_blank" href="https://www.deezer.com/en/album/169820532" class="btn btn-lg"> <img class="ml-3"
-                    width="125px" height="23.85px"
-                    src="https://www.vk-style.com/archive/image/article1/images/supernova/deezer.png" alt="deezer">
-                <div class="btn btn-outline-dark mr-3">Play</div>
-            </a> </div>
-        <div class="service"> <a class="d-flex justify-content-between align-items-center h-100 text-decoration-none"
-                target="_blank" href="https://us.napster.com/artist/vk/album/endless-falling-lights-supernova"
-                class="btn btn-lg"> <img class="ml-3" width="125px" height="61px"
-                    src="https://www.vk-style.com/archive/image/article1/images/supernova/napster.png" alt="napster">
-                <div class="btn btn-outline-dark mr-3">Play</div>
-            </a> </div>
-        <div class="service"> <a class="d-flex justify-content-between align-items-center h-100 text-decoration-none"
-                target="_blank"
-                href="https://www.pandora.com/artist/vke/endless-falling-lights-supernova/AL5dxmtxtvfKbXq"
-                class="btn btn-lg"> <img class="ml-3" width="125px" height="25.68px"
-                    src="https://www.vk-style.com/archive/image/article1/images/supernova/pandora.png" alt="pandora">
-                <div class="btn btn-outline-dark mr-3">Play</div>
-            </a> </div>
-        <div class="service"> <a class="d-flex justify-content-between align-items-center h-100 text-decoration-none"
-                target="_blank"
-                href="https://www.qobuz.com/fr-fr/album/endless-falling-lights-supernova-vk/vu439ivbuxnqa"
-                class="btn btn-lg"> <img class="ml-3" width="125px" height="76.17px"
-                    src="https://www.vk-style.com/archive/image/article1/images/supernova/qobuz.png" alt="qobuz">
-                <div class="btn btn-outline-dark mr-3">Play</div>
-            </a> </div>
-        <div class="service"> <a class="d-flex justify-content-between align-items-center h-100 text-decoration-none"
-                target="_blank" href="https://music.yandex.ru/album/11924211/" class="btn btn-lg"> <img class="ml-3"
-                    width="125px" height="49.02px"
-                    src="https://www.vk-style.com/archive/image/article1/images/supernova/yandex.png" alt="yandex">
-                <div class="btn btn-outline-dark mr-3">Play</div>
-            </a> </div>
     </div>
-    </div>
-    <div id="footer" class="container p-0 text-center mt-2 mb-3"> <a class="text-decoration-none text-light"
-            target="_blank" href="https://www.vk-style.com">www.vk-style.com</a> </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
+    <div id="footer" class="container p-0 text-center mt-2 mb-3"> <a class="text-decoration-none text-light" target="_blank" href="https://www.vk-style.com">www.vk-style.com</a> </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        var imglink = 'https://www.vk-style.com/archive/image/article1/images/elem1/'
+        var services = new Vue({
+            el: '#services',
+            data: {
+                services: [{
+                    href: 'https://youtube.com/playlist?list=PLdIrKuHkY11D2CUoPaavUW4kOftWG0xzi',
+                    src: imglink + 'youtube.png',
+                    alt: 'youtube'
+                }, {
+                    href: 'https://open.spotify.com/album/53A5WImAy1mV9z1McozYym',
+                    src: imglink + 'spotify.png',
+                    alt: 'spotify'
+                }, {
+                    href: 'https://music.apple.com/tw/album/v-k%E5%85%8B%E9%8B%BC%E7%90%B4%E6%9B%B2%E9%9B%86-%E5%88%9D%E9%9A%8E-vol-1/1569784379',
+                    src: imglink + 'applemusic.png',
+                    alt: 'applemusic'
+                }, {
+                    href: 'https://www.kkbox.com/tw/tc/album/ix0GXUxr5Pgyx0F7DKyt009H-index.html',
+                    src: imglink + 'kkbox.png',
+                    alt: 'kkbox'
+                }, {
+                    href: '',
+                    src: imglink + 'music163.png',
+                    alt: 'music163'
+                }, {
+                    href: '',
+                    src: imglink + 'qq.png',
+                    alt: 'qq'
+                }, {
+                    href: '',
+                    src: imglink + 'kuwo.png',
+                    alt: 'kuwo'
+                }, {
+                    href: '',
+                    src: imglink + 'kugo.png',
+                    alt: 'kugo'
+                }, {
+                    href: 'https://www.mymusic.net.tw/ux/w/album/show/5219900',
+                    src: imglink + 'mymusic.png',
+                    alt: 'mymusic'
+                }, {
+                    href: '',
+                    src: imglink + 'friday.png',
+                    alt: 'friday'
+                }, {
+                    href: '',
+                    src: imglink + 'tidal.png',
+                    alt: 'tidal'
+                }, {
+                    href: '',
+                    src: imglink + 'joox.png',
+                    alt: 'joox'
+                }, {
+                    href: '',
+                    src: imglink + 'maxis.png',
+                    alt: 'maxis'
+                }, {
+                    href: '',
+                    src: imglink + 'umobile.png',
+                    alt: 'umobile'
+                }, {
+                    href: '',
+                    src: imglink + 'singtel.png',
+                    alt: 'singtel'
+                }, {
+                    href: '',
+                    src: imglink + 'starhub.png',
+                    alt: 'starhub'
+                }, {
+                    href: '',
+                    src: imglink + 'moov.png',
+                    alt: 'moov'
+                }]
+            }
+        })
+    </script>
 </body>
 
 </html>
